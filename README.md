@@ -1,3 +1,31 @@
+# Voice PD: conversational voice screening
+
+The active backend follows our original proposal: an ElevenLabs voice agent,
+live Parselmouth acoustic measurements, and a speaker-validated acoustic
+classifier. Frontend work is deferred.
+
+- Measures local jitter, local shimmer, HNR, smoothed cepstral peak prominence
+  (CPPS), and glottal-to-noise excitation ratio (GNE), plus F0, formants and mean
+  pulse period.
+- Streams analysis of four-second microphone windows during the conversation.
+- Supports Logistic Regression and Random Forest training with speaker-separated
+  cross-validation, an age-50 coverage gate, and matched-task external evaluation.
+- Uses a guided sustained vowel exercise when only a vowel-trained model is
+  available. Unsupported speech tasks return measurements without a score.
+
+**Start here: [conversational backend setup and API](docs/conversation_backend.md).**
+Run `python -m uvicorn conversation_app:app` after installing
+`requirements_conversation.txt` and configuring ElevenLabs.
+
+Gemini generates explanations from server-computed measurements and scores.
+Local credentials load from the Git-ignored `.env` file.
+Scores are experimental model outputs, not diagnoses or personal disease
+probabilities. openSMILE and embedding fusion are later stages.
+The inherited recording demo and its historical results are documented below;
+its models and metrics do not validate the new conversational classifier.
+
+---
+
 <div align="center">
 
 # 🧠 Voice·PD

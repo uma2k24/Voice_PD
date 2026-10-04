@@ -1,0 +1,12 @@
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.env
+.local/
+uploads/
+models_conversation/training_windows.csv
+models_conversation/rejected_windows.csv
+models_conversation/fold_speakers.json
+models_conversation/*speaker_scores.csv
+data/ipvs_manifest*

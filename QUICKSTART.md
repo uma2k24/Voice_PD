@@ -1,5 +1,12 @@
 # Quick start
 
+For the new conversational classifier backend, follow
+[these setup, training and microphone instructions](docs/conversation_backend.md).
+The backend entrypoint is `conversation_app:app`; ElevenLabs credentials and an
+agent configuration are required for live conversation. Frontend work is deferred.
+
+The remaining instructions describe the inherited recording-based Flask demo.
+
 You've just unzipped the project. Here's what to do.
 
 ## To run the demo

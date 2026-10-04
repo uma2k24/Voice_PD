@@ -1,0 +1,74 @@
+{
+  "extractor_version": "praat-conversation-v1",
+  "features": [
+    "jitter_local_percent",
+    "shimmer_local_percent",
+    "hnr_db",
+    "cpps_db",
+    "gne_ratio",
+    "f0_mean_hz",
+    "f0_std_hz",
+    "f1_mean_hz",
+    "f2_mean_hz",
+    "f3_mean_hz",
+    "mean_period_seconds"
+  ],
+  "settings": {
+    "sample_rate": 16000,
+    "pitch_floor_hz": 60,
+    "pitch_ceiling_hz": 500,
+    "cpps_time_smoothing_s": 0.01,
+    "cpps_quefrency_smoothing_s": 0.001,
+    "gne_min_hz": 500,
+    "gne_max_hz": 4500,
+    "gne_bandwidth_hz": 1000,
+    "gne_step_hz": 80
+  },
+  "minimum_age": 50,
+  "tasks": [
+    "sustained_vowel"
+  ],
+  "classifier": "logreg",
+  "cv": "StratifiedGroupKFold",
+  "threshold": 0.5,
+  "speaker_metrics": {
+    "speaker_auc": 0.8761609907120743,
+    "speaker_balanced_accuracy_at_0_5": 0.7770897832817337,
+    "speaker_brier": 0.1406172956696094,
+    "n_speakers": 36
+  },
+  "n_windows": 186,
+  "n_rejected_windows": 8,
+  "max_windows_per_recording": 3,
+  "limitations": [
+    "Research prototype; score is not a personal disease probability.",
+    "Task coverage is limited to the supplied training recordings.",
+    "No external validation unless external_metrics is present."
+  ],
+  "versions": {
+    "scikit_learn": "1.5.2",
+    "praat_parselmouth": "0.4.7"
+  },
+  "n_eligible_recordings": 71,
+  "n_usable_recordings": 71,
+  "cohort": {
+    "0": {
+      "n_speakers": 17,
+      "age_min": 60,
+      "age_max": 77,
+      "sex_counts": {
+        "F": 10,
+        "M": 7
+      }
+    },
+    "1": {
+      "n_speakers": 19,
+      "age_min": 50,
+      "age_max": 80,
+      "sex_counts": {
+        "M": 11,
+        "F": 8
+      }
+    }
+  }
+}

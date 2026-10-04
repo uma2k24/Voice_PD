@@ -1,0 +1,2 @@
+-r requirements_conversation.txt
+sounddevice>=0.5,<1
